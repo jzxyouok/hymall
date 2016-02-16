@@ -1,0 +1,24 @@
+<table class="table table-striped table-hover table-condensed">
+	<tr>
+		<th>商品名称</th>
+		<th>货号</th>
+		<th>价格</th>
+		<th>数量</th>
+		<th>属性</th>
+		<th>库存</th>
+		<th>小计</th>
+	</tr>
+	<?php foreach ($goodsdata as $v) {
+	?>
+	<tr>
+		<td><img src="<?php echo C('IMG_SRC').$v['info']['goods_thumb']?>"><br><?php echo $v['goods_name']?></td>
+		<td><?php echo $v['info']['goods_sn']?></td>
+		<td><?php echo $v['shop_price']?></td>
+		<td><?php echo $v['goods_count']?></td>
+		<td><?php echo $v['attrs']?></td>
+		<td><?php echo $v['goods_number']?></td>
+		<td><?php echo $v['shop_price']*$v['goods_count']?></td>
+	</tr>
+	<?php	
+	}?>
+</table>
